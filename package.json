@@ -1,0 +1,13 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite frontend --host 127.0.0.1",
+    "build": "vite build frontend",
+    "preview": "vite preview --outDir frontend/dist"
+  },
+  "devDependencies": {
+    "vite": "^8.0.16"
+  }
+}
