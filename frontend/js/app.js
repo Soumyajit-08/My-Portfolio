@@ -216,11 +216,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const typingText = document.getElementById('typing-text');
 
   const roles = [
-    'Python Programmer.',
     'Full-Stack Developer.',
     'Software Developer.',
-    'AI Support Specialist.',
-    'Salesforce Trainee.',
+    'Python Developer.',
+    'React & Next.js Engineer.',
+    'FastAPI & Node.js Developer.',
     'MCA Graduate.'
   ];
 
@@ -460,7 +460,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           const response =
             await fetch(
-              'https://formsubmit.co/ajax/soumyajitnag2021@gmail.com',
+              'https://formsubmit.co/ajax/soumyajitnag2026@gmail.com',
               {
                 method: 'POST',
 

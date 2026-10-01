@@ -667,39 +667,35 @@ header.scrolled {
   background-size: contain;
 }
 
-.skills-grid .skill-card:nth-child(1) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"); font-size: 0; }
-.skills-grid .skill-card:nth-child(2) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"); font-size: 0; }
-.skills-grid .skill-card:nth-child(3) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"); font-size: 0; }
-.skills-grid .skill-card:nth-child(4) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"); font-size: 0; }
-.skills-grid .skill-card:nth-child(5) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/json/json-original.svg"); font-size: 0; }
-.skills-grid .skill-card:nth-child(6) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"); font-size: 0; }
-.skills-grid .skill-card:nth-child(7) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"); filter: invert(1); font-size: 0; }
-.skills-grid .skill-card:nth-child(8) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"); font-size: 0; }
-.skills-grid .skill-card:nth-child(9) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"); font-size: 0; }
-.skills-grid .skill-card:nth-child(10) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg"); filter: invert(1); font-size: 0; }
-.skills-grid .skill-card:nth-child(11) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg"); font-size: 0; }
-.skills-grid .skill-card:nth-child(12) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg"); font-size: 0; }
-.skills-grid .skill-card:nth-child(13) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/salesforce/salesforce-original.svg"); font-size: 0; }
-.skills-grid .skill-card:nth-child(14) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/salesforce/salesforce-original.svg"); font-size: 0; }
-.skills-grid .skill-card:nth-child(15) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"); font-size: 0; }
-.skills-grid .skill-card:nth-child(16) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/salesforce/salesforce-original.svg"); font-size: 0; }
-.skills-grid .skill-card:nth-child(17) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/salesforce/salesforce-original.svg"); font-size: 0; }
-.skills-grid .skill-card:nth-child(18) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"); font-size: 0; }
-.skills-grid .skill-card:nth-child(19) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"); font-size: 0; }
-.skills-grid .skill-card:nth-child(20) .skill-icon { background-image: url("https://cdn.simpleicons.org/jsonwebtokens/ffffff"); font-size: 0; }
-.skills-grid .skill-card:nth-child(21) .skill-icon { background-image: url("https://cdn.simpleicons.org/letsencrypt/ffffff"); font-size: 0; }
-.skills-grid .skill-card:nth-child(22) .skill-icon { background-image: url("https://cdn.simpleicons.org/auth0/EB5424"); font-size: 0; }
-.skills-grid .skill-card:nth-child(23) .skill-icon { background-image: url("https://cdn.simpleicons.org/zod/3E67B1"); font-size: 0; }
-.skills-grid .skill-card:nth-child(24) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"); filter: invert(1); font-size: 0; }
-.skills-grid .skill-card:nth-child(25) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"); font-size: 0; }
-.skills-grid .skill-card:nth-child(26) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg"); font-size: 0; }
-.skills-grid .skill-card:nth-child(27) .skill-icon { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original.svg"); font-size: 0; }
-
-@supports not selector(:nth-child(1)) {
-  .skill-icon {
-    font-size: 1rem;
-  }
-}
+.skill-icon.icon-python { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"); font-size: 0; }
+.skill-icon.icon-javascript { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"); font-size: 0; }
+.skill-icon.icon-typescript { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"); font-size: 0; }
+.skill-icon.icon-html5 { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"); font-size: 0; }
+.skill-icon.icon-json { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/json/json-original.svg"); font-size: 0; }
+.skill-icon.icon-react { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"); font-size: 0; }
+.skill-icon.icon-nextjs { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"); filter: invert(1); font-size: 0; }
+.skill-icon.icon-tailwind { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"); font-size: 0; }
+.skill-icon.icon-nodejs { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"); font-size: 0; }
+.skill-icon.icon-express { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg"); filter: invert(1); font-size: 0; }
+.skill-icon.icon-fastapi { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg"); font-size: 0; }
+.skill-icon.icon-restapi { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg"); font-size: 0; }
+.skill-icon.icon-mongodb { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"); font-size: 0; }
+.skill-icon.icon-sql { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"); font-size: 0; }
+.skill-icon.icon-jwt { background-image: url("https://cdn.simpleicons.org/jsonwebtokens/ffffff"); font-size: 0; }
+.skill-icon.icon-argon2 { background-image: url("https://cdn.simpleicons.org/letsencrypt/ffffff"); font-size: 0; }
+.skill-icon.icon-token { background-image: url("https://cdn.simpleicons.org/auth0/EB5424"); font-size: 0; }
+.skill-icon.icon-rbac { background-image: url("https://cdn.simpleicons.org/zod/3E67B1"); font-size: 0; }
+.skill-icon.icon-routes { font-size: 1.5rem; }
+.skill-icon.icon-validation { font-size: 1.5rem; }
+.skill-icon.icon-git { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"); font-size: 0; }
+.skill-icon.icon-github { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"); filter: invert(1); font-size: 0; }
+.skill-icon.icon-vscode { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"); font-size: 0; }
+.skill-icon.icon-postman { background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg"); font-size: 0; }
+.skill-icon.icon-api { font-size: 1.5rem; }
+.skill-icon.icon-crud { font-size: 1.5rem; }
+.skill-icon.icon-db { font-size: 1.5rem; }
+.skill-icon.icon-upload { font-size: 1.5rem; }
+.skill-icon.icon-responsive { font-size: 1.5rem; }
 
 .skill-name {
   font-weight: 600;
@@ -769,11 +765,18 @@ header.scrolled {
   margin-bottom: 12px;
 }
 
+.project-title a {
+  transition: color var(--transition-fast);
+}
+
+.project-title a:hover {
+  color: var(--primary) !important;
+}
+
 .project-desc {
   color: var(--text-muted);
   font-size: 0.95rem;
-  margin-bottom: 20px;
-  flex-grow: 1;
+  margin-bottom: 16px;
 }
 
 .project-list {
@@ -804,6 +807,7 @@ header.scrolled {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  margin-top: auto;
 }
 
 .tech-tag {
@@ -814,6 +818,62 @@ header.scrolled {
   background: rgba(var(--primary-rgb), 0.07);
   border: 1px solid rgba(var(--primary-rgb), 0.15);
   color: var(--primary);
+}
+
+.project-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 191, 0, 0.12);
+}
+
+.btn-project-live {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #002D62;
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 9px 16px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(var(--primary-rgb), 0.22);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+}
+
+.btn-project-live:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(var(--primary-rgb), 0.38);
+  filter: brightness(1.08);
+  color: #001f44;
+}
+
+.btn-project-github {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  font-weight: 500;
+  font-size: 0.88rem;
+  padding: 9px 14px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.btn-project-github:hover {
+  background: var(--primary-glow);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
 }
 
 /* Timeline (Experience & Education) */
