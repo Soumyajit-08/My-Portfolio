@@ -195,18 +195,68 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('nav-menu');
   const navLinks = document.querySelectorAll('.nav-link');
+  const menuBackdrop = document.getElementById('menu-backdrop');
+
+  function openMenu() {
+    hamburger?.classList.add('active');
+    navMenu?.classList.add('active');
+    menuBackdrop?.classList.add('active');
+    document.body.classList.add('menu-open');
+    hamburger?.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeMenu() {
+    hamburger?.classList.remove('active');
+    navMenu?.classList.remove('active');
+    menuBackdrop?.classList.remove('active');
+    document.body.classList.remove('menu-open');
+    hamburger?.setAttribute('aria-expanded', 'false');
+  }
 
   if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navMenu.classList.toggle('active');
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navMenu.classList.contains('active');
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
   }
 
+  if (menuBackdrop) {
+    menuBackdrop.addEventListener('click', () => {
+      closeMenu();
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu?.classList.contains('active')) {
+      closeMenu();
+    }
+  });
+
   navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger?.classList.remove('active');
-      navMenu?.classList.remove('active');
+    link.addEventListener('click', (e) => {
+      closeMenu();
+      const targetId = link.getAttribute('href');
+      if (targetId && targetId.startsWith('#')) {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          const headerHeight = header?.offsetHeight || 72;
+          const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - headerHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+
+          history.pushState(null, '', targetId);
+        }
+      }
     });
   });
 
@@ -273,49 +323,79 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 4. Skills Hub Filter
+  // 4. Skills Hub Filter & Slider Controls
   // ==========================================
-  const tabButtons =
-    document.querySelectorAll('.tab-btn');
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const skillCards = document.querySelectorAll('.skill-card');
+  const skillsTabs = document.getElementById('skills-tabs');
+  const skillsPrevBtn = document.getElementById('skills-slider-prev');
+  const skillsNextBtn = document.getElementById('skills-slider-next');
 
-  const skillCards =
-    document.querySelectorAll('.skill-card');
+  // Slider buttons logic
+  function updateSkillsSlider() {
+    if (!skillsTabs || !skillsPrevBtn || !skillsNextBtn) return;
+    const maxScroll = Math.max(0, skillsTabs.scrollWidth - skillsTabs.clientWidth);
+    const scrollLeft = skillsTabs.scrollLeft;
+
+    if (maxScroll <= 6) {
+      skillsPrevBtn.disabled = true;
+      skillsNextBtn.disabled = true;
+      skillsPrevBtn.classList.add('disabled');
+      skillsNextBtn.classList.add('disabled');
+      skillsNextBtn.classList.remove('pulse');
+    } else {
+      const atStart = scrollLeft <= 8;
+      const atEnd = scrollLeft >= maxScroll - 8;
+
+      skillsPrevBtn.disabled = atStart;
+      skillsNextBtn.disabled = atEnd;
+      skillsPrevBtn.classList.toggle('disabled', atStart);
+      skillsNextBtn.classList.toggle('disabled', atEnd);
+
+      // Pulse next button when at start to cue the user that tabs can be slid
+      if (atStart) {
+        skillsNextBtn.classList.add('pulse');
+      } else {
+        skillsNextBtn.classList.remove('pulse');
+      }
+    }
+  }
+
+  if (skillsPrevBtn && skillsNextBtn && skillsTabs) {
+    skillsPrevBtn.addEventListener('click', () => {
+      skillsTabs.scrollBy({ left: -200, behavior: 'smooth' });
+    });
+
+    skillsNextBtn.addEventListener('click', () => {
+      skillsTabs.scrollBy({ left: 200, behavior: 'smooth' });
+    });
+
+    skillsTabs.addEventListener('scroll', updateSkillsSlider, { passive: true });
+    window.addEventListener('resize', updateSkillsSlider);
+    setTimeout(updateSkillsSlider, 300);
+  }
 
   tabButtons.forEach(button => {
-
     button.addEventListener('click', () => {
-
-      tabButtons.forEach(btn =>
-        btn.classList.remove('active')
-      );
-
+      tabButtons.forEach(btn => btn.classList.remove('active'));
       button.classList.add('active');
 
-      const filterCategory =
-        button.getAttribute('data-category');
+      // Auto-center the clicked tab horizontally within the slider
+      button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+      const filterCategory = button.getAttribute('data-category');
 
       skillCards.forEach(card => {
-
-        const cardCategory =
-          card.getAttribute('data-category');
-
-        if (
-          filterCategory === 'all' ||
-          cardCategory === filterCategory
-        ) {
-
+        const cardCategory = card.getAttribute('data-category');
+        if (filterCategory === 'all' || cardCategory === filterCategory) {
           card.style.display = 'flex';
-
           setTimeout(() => {
             card.style.opacity = '1';
             card.style.transform = 'scale(1)';
           }, 50);
-
         } else {
-
           card.style.opacity = '0';
           card.style.transform = 'scale(0.8)';
-
           setTimeout(() => {
             card.style.display = 'none';
           }, 300);
